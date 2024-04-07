@@ -11,11 +11,14 @@ const Banner = () => {
             Buy and Sell Engineering Books{" "}
             <span className="text-blue-700">for the Best Prices</span>
           </h2>
-          <p className="md:w-4/5">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae
-            quam excepturi quod dicta accusamus harum neque. Numquam eos hic
-            natus nemo aliquid porro recusandae, illo nisi magni blanditiis,
-            ullam libero?
+          <p className="md:w-3/5">
+            Welcome to EngiReads, your digital library for engineering
+            excellence. Dive into our comprehensive repository of engineering
+            books and resources, meticulously curated for your academic and
+            professional growth.{" "}
+            <span className="text-blue-700 font-bold">
+              Search to Explore...
+            </span>
           </p>
           <div>
             <input

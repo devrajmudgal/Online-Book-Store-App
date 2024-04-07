@@ -48,7 +48,7 @@ const Navbar = () => {
             className="text-2xl font-bold text-blue-700 flex items-center gap-2"
           >
             <FaBlog className="inline-block" />
-            Books
+            EngiReads
           </Link>
 
           {/* nav items for large devices */}
