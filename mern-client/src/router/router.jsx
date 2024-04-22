@@ -4,13 +4,13 @@ import App from "../App";
 import Home from "../Home/Home";
 import Shop from "../Shop/Shop";
 import About from "../components/About";
-import Blog from "../components/Blog";
 import SingleBook from "../Shop/SingleBook";
 import DashboardLayout from "../dashboard/DashboardLayout"
 import Dashboard from '../dashboard/Dashboard'
 import UploadBook from "../dashboard/UploadBook";
 import ManageBooks from "../dashboard/ManageBooks";
 import EditBooks from "../dashboard/EditBooks";
+import Cart from "../components/Cart";
 
 const router = createBrowserRouter([
   {
@@ -30,8 +30,8 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/blog",
-        element: <Blog />,
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/book/:id",
