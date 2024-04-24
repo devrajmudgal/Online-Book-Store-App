@@ -32,7 +32,7 @@ const Navbar = () => {
     { link: "Home", path: "/" },
     { link: "About", path: "/about" },
     { link: "Shop", path: "/shop" },
-    { link: "Sell Your Book", path: "/admin/dashboard" },
+    // { link: "Sell Your Book", path: "/admin/dashboard" },
     { link: "Cart", path: "/cart" },
   ];
   return (
@@ -68,13 +68,12 @@ const Navbar = () => {
 
           {/* btn for lg devices */}
           <div className="space-x-12 hidden lg:flex items-center">
-            <button>
+            <button className="hidden">
               <FaBarsStaggered className="w-5 hover:text-blue-700" />
             </button>
           </div>
 
           {/* menu btn for mobile devices */}
-
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
@@ -103,8 +102,9 @@ const Navbar = () => {
             >
               {link}
             </Link>
+           
           ))}
-        </div>
+        </div> 
       </nav>
     </header>
   );

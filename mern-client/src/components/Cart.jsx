@@ -1,52 +1,64 @@
-import React, { useState } from "react";
-
+import React from "react";
 const Cart = () => {
-  const [cart, setCart] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(0);
+    return (
+        <div className="section-container">
+            <div className="px-4 lg:px-24 flex items-center">
+                <div className="flex w-full flex-col justify-center items-center gap-12 py-48">
+                    {/* left side  */}
+                    <div className="space-y-8 h-full">
+                        <h2 className="text-5xl font-bold leading-snug text-black">
+                            Items Added to {" "}
+                            <span className="text-blue-700">Cart :</span>
+                        </h2>
 
-  const removeFromCart = (bookId) => {
-    const updatedCart = cart.filter((book) => book._id !== bookId);
-    setCart(updatedCart);
-  };
+                        <div className="overflow-x-auto">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Serial No</th>
+                                        <th>Name</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {items.map((item, index) => (
+                                        <tr key={item.id}>
+                                            <td>{index + 1}</td>
+                                            <td>{item.name}</td>
+                                            <td>
+                                                <button onClick={() => setItems(prevItems => {
+                                                    const newItems = [...prevItems];
+                                                    newItems[index].quantity++;
+                                                    return newItems;
+                                                })}>+</button>
+                                                {item.quantity}
+                                                <button onClick={() => setItems(prevItems => {
+                                                    const newItems = [...prevItems];
+                                                    if (newItems[index].quantity > 1) {
+                                                        newItems[index].quantity--;
+                                                    }
+                                                    return newItems;
+                                                })}>-</button>
+                                            </td>
+                                            <td>${item.price}</td>
+                                            <td><button onClick={() => deleteItem(item.id)}>Delete</button></td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
 
-  const calculateTotalPrice = () => {
-    const total = cart.reduce((acc, book) => acc + book.price, 0);
-    setTotalPrice(total);
-  };
+            </div>
 
-  return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold mb-4">Cart</h1>
-      <table className="w-full mb-8">
-        <thead>
-          <tr>
-            <th className="py-2">Title</th>
-            <th className="py-2">Author</th>
-            <th className="py-2">Price</th>
-            <th className="py-2">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {cart.map((book) => (
-            <tr key={book._id}>
-              <td className="py-2">{book.title}</td>
-              <td className="py-2">{book.author}</td>
-              <td className="py-2">₹{book.price}</td>
-              <td className="py-2">
-                <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded" onClick={() => removeFromCart(book._id)}>
-                  Remove
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <div className="flex justify-between">
-        <span className="text-lg font-bold">Total Price:</span>
-        <span className="text-lg font-bold">₹{totalPrice}</span>
-      </div>
-    </div>
-  );
+
+        </div>
+
+
+    );
 };
 
 export default Cart;

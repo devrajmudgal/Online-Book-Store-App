@@ -9,7 +9,7 @@ const Shop = () => {
   },[])
   return (
     <div className='mt-28 px-4 lg:px-24'>
-      <h2 className='text-5xl font-bold text-center'>All Books are here</h2>
+      <h2 className='text-5xl font-bold text-center'>ALL BOOKS ARE HERE!!</h2>
 
       <div className='grid gap-8 my-12 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 grid-cols-1'>
         {
@@ -24,11 +24,11 @@ const Shop = () => {
             </h5>
 
             <p className="font-normal text-gray-700 dark:text-gray-400">
-             <p> Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+             <p> Here are the biggest enterprise technology acquisitions of 2024 so far, in reverse chronological order.
             </p>
             </p>
             <button className='bg-blue-700 font-semibold text-white py-2 rounded'>
-             <Link to="/cart">Buy Now</Link></button>
+             <Link to={`/book/${book._id}`}>Buy Now</Link></button>
           </Card>)
         }
       </div>
