@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import {Card} from "flowbite-react";
+import { Card } from "flowbite-react";
 import { Link } from 'react-router-dom';
 const Shop = () => {
-  const [books , setbooks] = useState([]);
+  const [books, setbooks] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch("http://localhost:5000/all-books").then(res => res.json()).then(data => setbooks(data));
-  },[])
+  }, [])
   return (
     <div className='mt-28 px-4 lg:px-24'>
-      <h2 className='text-5xl font-bold text-center'>ALL BOOKS ARE HERE!!</h2>
+      <h2 className='text-5xl font-bold text-center'>All Books Are <span className='text-blue-700'> Here!!</span></h2>
 
       <div className='grid gap-8 my-12 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 grid-cols-1'>
         {
           books.map(book => <Card
             className="max-w-sm"
           >
-            <img src={book.imageURL} alt="" className='h-96'/>
+            <img src={book.imageURL} alt="" className='h-96' />
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               <p>
                 {book.title}
@@ -24,11 +24,11 @@ const Shop = () => {
             </h5>
 
             <p className="font-normal text-gray-700 dark:text-gray-400">
-             <p> Here are the biggest enterprise technology acquisitions of 2024 so far, in reverse chronological order.
-            </p>
+              <p> Here are the biggest enterprise technology acquisitions of 2024 so far, in reverse chronological order.
+              </p>
             </p>
             <button className='bg-blue-700 font-semibold text-white py-2 rounded'>
-             <Link to={`/book/${book._id}`}>Buy Now</Link></button>
+              <Link to={`/book/${book._id}`}>Buy Now</Link></button>
           </Card>)
         }
       </div>

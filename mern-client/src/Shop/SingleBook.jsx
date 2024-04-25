@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 
-const SingleBook = () => {
-  const [cart, setCart] = useState([]);
-  const { _id, title, imageURL, bookdescription, author, language, pages, price } = useLoaderData();
-  const data = [_id, title, imageURL, bookdescription, author, language, pages, price];
-  const addToCart = (data) => {
-    console.log('button was clicked', data)
-  };
+const SingleBook = ({ addToCart }) => {
+  const { title, imageURL, bookdescription, author, language, pages, price } = useLoaderData();
+  // const data = [_id, title, imageURL, bookdescription, author, language, pages, price];
   return (
     <div className="mt-28 lg:px-24 container mx-auto px-4 py-8 flex justify-center items-center">
       <div className="w-1/2">
