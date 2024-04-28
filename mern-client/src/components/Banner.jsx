@@ -20,7 +20,7 @@ const Banner = () => {
               Search to Explore...
             </span>
           </p>
-          <div>
+          {/* <div>
             <input
               type="text"
               name="search"
@@ -31,7 +31,7 @@ const Banner = () => {
             <button className="bg-blue-700 px-6 py-2 text-white font-medium hover:bg-black transition-all ease-in duration-200">
               Search
             </button>
-          </div>
+          </div> */}
         </div>
         {/* right side */}
         <div>
